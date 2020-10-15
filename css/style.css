@@ -1,0 +1,31 @@
+
+table {table-layout: fixed;}
+td {font-size: 14px; border: 1px solid #000;}
+.text {font-size: 14px; font-family: inconsolata, consolas, monospace; width: 100%; height: 21px; margin: 0; padding: 2px; border: none; box-sizing: border-box;}
+#resumePauseButton {
+  height: 100%;
+  cursor: pointer;
+}
+.recognitionResult {
+  height: 60px;
+  padding: 3px;
+}
+.recognitionResultText {
+  font-size: 24px;
+}
+.sending {
+  color: white;
+  background: red;
+}
+.supplement {
+  font-size: 12px;
+}
+.bar {
+  position: relative;
+}
+#version {
+  font-size: 10px;
+  position: absolute;
+  right: 0;
+  top: -12px;
+}
