@@ -105,29 +105,6 @@ td {font-size: 14px; border: 1px solid #000;}
 <script type="text/javascript">
 (function() {
   // <!--
-  function log_(n, s) {
-    console.log(n + s);
-    var color = "";
-    if (s.lastIndexOf("EVENT: ", 0) != -1) {
-//    color = "green";
-    } else
-    if (s.lastIndexOf("INFO: ", 0) != -1) {
-//    color = "blue";
-    } else
-    if (s.lastIndexOf("ERROR: ", 0) != -1) {
-      color = "red";
-    } else {
-      color = "black";
-    }
-    if (color) {
-      if (messages.childNodes.length >= 20) {
-        messages.removeChild(messages.lastChild);
-      }
-      messages.insertBefore(document.createElement("div"), messages.firstChild).innerHTML = n + s;
-      messages.firstChild.style.borderBottom = "1px #ddd solid";
-      messages.firstChild.style.color = color;
-    }
-  }
   function sanitize_(s) {
     return s.replace(/&/g, '&amp;')
             .replace(/</g, '&lt;')
@@ -348,24 +325,20 @@ td {font-size: 14px; border: 1px solid #000;}
   // -->
   // 音声認識サーバへの接続処理が開始した時に呼び出されます。
   function connectStarted() {
-    log_(this.name, "EVENT: connectStarted()");
     // ボタンの制御
     resumePauseButton.disabled = true;
   }
 
   // 音声認識サーバへの接続処理が完了した時に呼び出されます。
   function connectEnded() {
-    log_(this.name, "EVENT: connectEnded()");
   }
 
   // 音声認識サーバからの切断処理が開始した時に呼び出されます。
   function disconnectStarted() {
-    log_(this.name, "EVENT: disconnectStarted()");
   }
 
   // 音声認識サーバからの切断処理が完了した時に呼び出されます。
   function disconnectEnded() {
-    log_(this.name, "EVENT: disconnectEnded()");
     // ボタンの制御
     resumePauseButton.innerHTML = "録音の開始";
     resumePauseButton.disabled = false;
@@ -374,12 +347,10 @@ td {font-size: 14px; border: 1px solid #000;}
 
   // 音声認識サーバへの音声データの供給開始処理が開始した時に呼び出されます。
   function feedDataResumeStarted() {
-    log_(this.name, "EVENT: feedDataResumeStarted()");
   }
 
   // 音声認識サーバへの音声データの供給開始処理が完了した時に呼び出されます。
   function feedDataResumeEnded() {
-    log_(this.name, "EVENT: feedDataResumeEnded()");
     // ボタンの制御
     resumePauseButton.innerHTML = "<br><br>音声データの録音中...<br><br><span class=\"supplement\">クリック → 録音の停止</span>";
     resumePauseButton.disabled = false;
@@ -388,29 +359,24 @@ td {font-size: 14px; border: 1px solid #000;}
 
   // 音声認識サーバへの音声データの供給終了処理が開始した時に呼び出されます。
   function feedDataPauseStarted() {
-    log_(this.name, "EVENT: feedDataPauseStarted()");
     // ボタンの制御
     resumePauseButton.disabled = true;
   }
 
   // 音声認識サーバへの音声データの供給終了処理が完了した時に呼び出されます。
   function feedDataPauseEnded(reason) {
-    log_(this.name, "EVENT: feedDataPauseEnded(): reason[code[" + reason.code + "] message[" + reason.message + "]]");
   }
 
   // 発話区間の始端が検出された時に呼び出されます。
   function utteranceStarted(startTime) {
-    log_(this.name, "EVENT: utteranceStarted(): endTime[" + startTime + "]");
   }
 
   // 発話区間の終端が検出された時に呼び出されます。
   function utteranceEnded(endTime) {
-    log_(this.name, "EVENT: utteranceEnded(): endTime[" + endTime + "]");
   }
 
   // 認識処理が開始された時に呼び出されます。
   function resultCreated() {
-    log_(this.name, "EVENT: resultCreated()");
     this.recognitionResultText.innerHTML = "...";
     this.recognitionResultInfo.innerHTML = "";
     this.time2 = new Date().getTime();
@@ -418,7 +384,6 @@ td {font-size: 14px; border: 1px solid #000;}
 
   // 認識処理中に呼び出されます。
   function resultUpdated(result) {
-    log_(this.name, "EVENT: resultUpdated(): result[" + result + "]");
     try {
       var json = JSON.parse(result);
       buffer = (json.text) ? sanitize_(json.text) : "...";
@@ -456,7 +421,6 @@ td {font-size: 14px; border: 1px solid #000;}
 
   // 認識処理が確定した時に呼び出されます。
   function resultFinalized(result) {
-    log_(this.name, "EVENT: resultFinalized(): result[" + result + "]");
     this.time0 = 0;
     this.time2 = new Date().getTime() - this.time2;
     this.confidence = -1.0;
@@ -506,12 +470,10 @@ td {font-size: 14px; border: 1px solid #000;}
     var cf = (this.confidence >= 0.0) ? this.confidence.toFixed(2) : "-";
     this.recognitionResultText.innerHTML = buffer;
     this.recognitionResultInfo.innerHTML = "RT: " + rt + "<br>CF: " + cf;
-    log_(this.name, buffer + " <font color=\"darkgray\">(RT: " + rt + ") (CF: " + cf + ")</font>");
   }
 
   // メッセージの出力が要求された時に呼び出されます。
   function TRACE(message) {
-    log_(this.name, message);
   }
 
   // 画面要素の取得
