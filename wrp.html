@@ -59,7 +59,7 @@ td {font-size: 14px; border: 1px solid #000;}
  <tr><td width="240">&nbsp;ワンタイムAppKey発行API URL</td><td><input type="text" class="text" id="issuerURL" spellcheck="false" tabindex="1"></td></tr>
  <tr><td width="240">&nbsp;サービス ID</td><td><input type="text" class="text" id="sid" spellcheck="false" tabindex="1"></td></tr>
  <tr><td width="240">&nbsp;サービスパスワード</td><td><input type="password" class="text" id="spw" spellcheck="false" autocomplete="on" tabindex="1"></td></tr>
- <tr class="issue_options" style="display:none;"><td width="240">&nbsp;有効期限</td><td><input type="text" class="text" id="epi" spellcheck="false" tabindex="1"></td></tr>
+ <tr><td width="240">&nbsp;有効期限</td><td><input type="text" class="text" id="epi" spellcheck="false" tabindex="1"></td></tr>
  <tr>
   <td width="240" height="32">
    <input type="button" value="サービス認証キーの取得" class="text" id="issueButton" tabindex="2">
@@ -71,23 +71,12 @@ td {font-size: 14px; border: 1px solid #000;}
 </table>
 </form>
 <div style="margin: 20px 2px;">
- 「サービス ID」「サービスパスワード」を入力した後に <b>[サービス認証キーの取得]</b> ボタンを押して、「サービス認証キー」を取得してください<span class="toggle_issue_options">。</span>
+ 「サービス ID」「サービスパスワード」を入力した後に <b>[サービス認証キーの取得]</b> ボタンを押して、「サービス認証キー」を取得してください。
 </div>
 <table border="0" width="100%" cellspacing="3" cellpadding="0">
  <tr><td width="240">&nbsp;サーバ URL</td><td><input type="text" class="text" id="serverURL" spellcheck="false" tabindex="3"></td></tr>
  <tr><td width="240">&nbsp;接続エンジン名</td><td><input type="text" class="text grammarFileNames" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;モード</td><td><input type="text" class="text" id="mode" spellcheck="false" tabindex="3"></td></tr>
- <tr><td width="240">&nbsp;プロファイル ID</td><td><input type="text" class="text" id="profileId" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;プロファイル単語</td><td><input type="text" class="text" id="profileWords" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;セグメンタタイプ</td><td><input type="text" class="text" id="segmenterType" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;セグメンタプロパティ文字列</td><td><input type="text" class="text" id="segmenterProperties" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;認識中イベント発行間隔 (単位：ミリ秒)</td><td><input type="text" class="text" id="resultUpdatedInterval" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;拡張情報</td><td><input type="text" class="text" id="extension" spellcheck="false" tabindex="3"></td></tr>
- <tr><td width="240">&nbsp;APPKEY</td><td><input type="text" class="text" id="authorization" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;<font color="silver">音声データ形式</font></td><td><input type="text" class="text" id="codec" spellcheck="false" tabindex="3" readonly></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;認識結果タイプ</td><td><input type="text" class="text" id="resultType" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;無発話許容時間 (単位：ミリ秒)</td><td><input type="text" class="text" id="checkIntervalTime" spellcheck="false" tabindex="3"></td></tr>
- <tr class="options" style="display:none;"><td width="240">&nbsp;連続録音可能時間 (単位: ミリ秒)</td><td><input type="text" class="text" id="maxRecordingTime" spellcheck="false" tabindex="3"></td></tr>
+ <tr><td width="240">&nbsp;APPKEY</td><td><input type="password" class="text" id="authorization" spellcheck="false" tabindex="3"></td></tr>
  <tr>
   <td width="240" height="100">
    <button class="text" id="resumePauseButton" tabindex="5">録音の開始</button>
@@ -98,7 +87,7 @@ td {font-size: 14px; border: 1px solid #000;}
  </tr>
 </table>
 <div style="margin: 20px 2px 24px 2px;">
- <b>[録音の開始]</b> ボタンを押して、マイクに向かって話してください。 <img src="data:image/gif;base64,R0lGODlhCgAPAMIAAAAAABYWFqqqqufn5////wAAAAAAAAAAACH5BAEKAAcALAAAAAAKAA8AAAMmSLq8E2E0AiqY9raMba/MxWmiRw4ZqgACdQka3BLyAltzqDF3NScAOw==" alt="" width="10" height="15"> マイクの使用や共有などを求められた場合は、「許可」 ボタンまたは 「共有」 ボタンを押してください<span class="toggle_options">。</span>
+ <b>[録音の開始]</b> ボタンを押して、マイクに向かって話してください。 <img src="data:image/gif;base64,R0lGODlhCgAPAMIAAAAAABYWFqqqqufn5////wAAAAAAAAAAACH5BAEKAAcALAAAAAAKAA8AAAMmSLq8E2E0AiqY9raMba/MxWmiRw4ZqgACdQka3BLyAltzqDF3NScAOw==" alt="" width="10" height="15"> マイクの使用や共有などを求められた場合は、「許可」 ボタンまたは 「共有」 ボタンを押してください。
 </div>
 <div class="bar"><hr><div id="version"></div></div>
 <div id="messages"></div>
@@ -490,33 +479,12 @@ td {font-size: 14px; border: 1px solid #000;}
   issuerURL.value = "https://acp-api.amivoice.com/issue_service_authorization";
   serverURL.value = "wss://acp-api.amivoice.com/v1/";
   grammarFileNames[0].value = Wrp.grammarFileNames;
-  mode.value = Wrp.mode;
-  profileId.value = Wrp.profileId;
-  profileWords.value = Wrp.profileWords;
-  segmenterType.value = Wrp.segmenterType;
-  segmenterProperties.value = Wrp.segmenterProperties;
-  resultUpdatedInterval.value = Wrp.resultUpdatedInterval;
-  extension.value = Wrp.extension;
   authorization.value = Wrp.authorization;
-  codec.value = Wrp.codec;
-  resultType.value = Wrp.resultType;
-  checkIntervalTime.value = Wrp.checkIntervalTime;
-  maxRecordingTime.value = Recorder.maxRecordingTime;
 
   // 音声認識ライブラリのプロパティ要素の設定
   Wrp.serverURLElement = serverURL;
   Wrp.grammarFileNamesElement = grammarFileNames[0];
-  Wrp.modeElement = mode;
-  Wrp.profileIdElement = profileId;
-  Wrp.profileWordsElement = profileWords;
-  Wrp.segmenterTypeElement = segmenterType;
-  Wrp.segmenterPropertiesElement = segmenterProperties;
-  Wrp.resultUpdatedIntervalElement = resultUpdatedInterval;
-  Wrp.extensionElement = extension;
   Wrp.authorizationElement = authorization;
-  Wrp.codecElement = codec;
-  Wrp.resultTypeElement = resultType;
-  Wrp.checkIntervalTimeElement = checkIntervalTime;
   Wrp.issuerURLElement = issuerURL;
   Wrp.sidElement = sid;
   Wrp.spwElement = spw;
@@ -541,9 +509,6 @@ td {font-size: 14px; border: 1px solid #000;}
   Wrp.resultFinalized = resultFinalized;
   Wrp.TRACE = TRACE;
 
-  // 録音ライブラリのプロパティ要素の設定
-  Recorder.maxRecordingTimeElement = maxRecordingTime;
-
   // 音声認識ライブラリ／録音ライブラリのメソッドの画面要素への登録
   resumePauseButton.onclick = function() {
     // 音声認識サーバへの音声データの供給中かどうかのチェック
@@ -558,32 +523,6 @@ td {font-size: 14px; border: 1px solid #000;}
     }
   };
   issueButton.onclick = Wrp.issue;
-
-  var issue_options = document.querySelectorAll(".issue_options");
-  function toggle_issue_options() {
-    issue_options[0].style.display = (issue_options[0].style.display === "") ? "none" : "";
-    for (var i = 1; i < issue_options.length; i++) {
-      issue_options[i].style.display = issue_options[0].style.display;
-    }
-  }
-  var toggle_issue_optionss = document.querySelectorAll(".toggle_issue_options");
-  for (var i = 0; i < toggle_issue_optionss.length; i++) {
-    toggle_issue_optionss[i].onclick = toggle_issue_options;
-    toggle_issue_optionss[i].style.cursor = "pointer";
-  }
-
-  var options = document.querySelectorAll(".options");
-  function toggle_options() {
-    options[0].style.display = (options[0].style.display === "") ? "none" : "";
-    for (var i = 1; i < options.length; i++) {
-      options[i].style.display = options[0].style.display;
-    }
-  }
-  var toggle_optionss = document.querySelectorAll(".toggle_options");
-  for (var i = 0; i < toggle_optionss.length; i++) {
-    toggle_optionss[i].onclick = toggle_options;
-    toggle_optionss[i].style.cursor = "pointer";
-  }
 
   version.innerHTML = Wrp.version;
 })();
